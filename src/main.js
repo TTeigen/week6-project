@@ -6,34 +6,40 @@ import './styles.css';
 import { DoctorSearch } from './backend-code';
 //variables
 let body;
+let bio;
 //code
+
 $(function() {
 
   $('.formOne').submit(function(event){
     event.preventDefault();
-    $('#docList').text("");
+    $('.results').text("");
+    $('#docs').text('');
     let symptom = $('#symptom').val();
     let specialty = $('#specialty').val();
     let gender = $('#gender').val();
     let search = new DoctorSearch;
-    let resultTest = search.searchBySymptom(symptom,gender,specialty);
-    console.log(resultTest);
-    resultTest.then (function(response){
+    console.log(symptom.length);
+    if (!symptom && !specialty) {
+      alert("Please enter either a symtpom or specialty");
+      return;
+    }
+    let results = search.searchBySymptom(symptom,gender,specialty);
+    results.then (function(response){
       body = JSON.parse(response);
-      console.log(body);
+
       if (body.data.length > 0) {
-        for (let i = 0; i < 10; i++) {
+        $('#docs').text(body.data.length);
+        for (let i = 0; i < body.data.length; i++) {
           let pic = body.data[i].profile.image_url;
           let name = `${body.data[i].profile.first_name} ${body.data[i].profile.last_name}, ${body.data[i].profile.title}`;
-          let bio = `${body.data[i].profile.bio}`;
-          $('.results').append(`<div class = doctor${i}>${name}<br>`);
-          $('.results').append(`<img src="${pic}">`);
-          $('.results').append(`<p id=bio${i}>${bio}</div></p><hr>`);
+          bio = `${body.data[i].profile.bio}`;
+          $('.results').append(`<div class= 'doc${i}'>${name}<br>`);
+          $('.results').append(`<img src="${pic}"></div><hr>`);
         }
       } else {
-        $('.results').append(`<p> Sorry! Unfortunately your search for <em>"${userSymptom}"</em> has not matched with any doctors. Perhaps try a different search term, or search by specialty (eg, pediatrician)</p>`)
+        $('.results').append(`<p> Sorry! Unfortunately your search has not matched with any doctors. Perhaps try a different search term, or search by specialty (eg, pediatrician)</p>`)
       }
     });
-
   });
 });
