@@ -9,17 +9,26 @@
       <h3>Find doctors in the Seattle area to help you feel your best!</h3>
     </div>
     <form class="formOne" action="index.html" method="post">
-      <label for="symptom">Enter keywords about your symptom/issue:</label>
-      <input type="text" id='symptom' value="">
-
+      <div class="form-group">
+        <label for="symptom">Enter keywords about your symptom/issue:</label>
+        <input type="text" id='symptom'>
+      </div>
+      <div class="form-group">
+        <label for="specialty">If you know the specialty of doctor you wish to see, enter it otherwise:</label>
+        <input type="text" id='specialty'>
+      </div>
+      <div class="from-group">
+        <label for="gender">If you would prefer a doctor of a specific gender specify here, otherwise leave blank:</label>
+        <select id="gender">
+          <option value=""></option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
       <button type="submit" name="button">Search!</button>
-
-
       <div class="results">
         The top 10 doctors to help you are:
-        <ul id ="docList">
-
-        </ul>
+        
       </div>
     </form>
   </body>

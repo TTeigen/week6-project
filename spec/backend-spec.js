@@ -2,6 +2,7 @@ import { DoctorSearch } from './../src/backend-code';
 
 describe('Symptom searching', function(){
 let proof;
+//test 'failed' but it allowed me to see I was getting info from API which allowed me to troubleshoot in front end
   it('should return a list of doctors for a given symptom', function (){
     let userInput = 'Physical Therapy';
     let search = new DoctorSearch;
