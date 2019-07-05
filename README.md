@@ -12,7 +12,7 @@ On this website the user will be able to search for doctors based on various pre
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
 | **Return a list of doctors in the Seattle area that treat the user's entered symptom/issue** | "Sore throat" | List of doctors suited to treat/identify issues related to sore throats  |
-| **Return a list of doctors in the Seattle area by name** | "Pool" | List of doctors with "Pool" as tehir first or last name and some information about them |
+| **Return a list of doctors in the Seattle area by name** | "Pool" | List of doctors with "Pool" as their first or last name and some information about them |
 | **Return an error if the user's search pulls up no responses (reason why if there is time to add that feature)** | "Sharp pain in pinky toe" | No doctors match your search (try a less specific description of your issue) |
 
 
