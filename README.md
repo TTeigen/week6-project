@@ -18,6 +18,7 @@ On this website the user will be able to search for doctors based on various pre
 
 ## Setup/Installation Requirements
 
+* **This project uses Better Doctor API and you will need a key to use it**
 * Clone this repository and open the .html file.
 * OR cd desktop/week6-project
 * npm run install

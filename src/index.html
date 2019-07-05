@@ -1,9 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Project Name</title>
+    <title>Find Your Doctor</title>
   </head>
   <body>
+    <div class="titlebox">
+      <h1>The "Unsick Quick" Doctor Lookup!</h1>
+      <h3>Find doctors in the Seattle area to help you feel your best!</h3>
+    </div>
+    <form class="formOne" action="index.html" method="post">
+      <label for="symptom">Enter keywords about your symptom/issue:</label>
+      <input type="text" id='symptom' value="">
 
+      <button type="submit" name="button">Search!</button>
+
+
+      <div class="results">
+        The top 10 doctors to help you are:
+        <ul id ="docList">
+
+        </ul>
+      </div>
+    </form>
   </body>
 </html>
