@@ -8,28 +8,37 @@
       <h1>The "Unsick Quick" Doctor Lookup!</h1>
       <h3>Find doctors in the Seattle area to help you feel your best!</h3>
     </div>
-    <form class="formOne" action="index.html" method="post">
-      <div class="form-group">
-        <label for="symptom">Enter keywords about your symptom/issue:</label>
-        <input type="text" id='symptom'>
+    <div class="container">
+      <form class="formOne" action="index.html" method="post">
+        <div class="form-group symptom">
+          <label for="symptom">Enter keywords about your symptom/issue:</label>
+          <input type="text" id='symptom'>
+        </div>
+        <div class="form-group specialty">
+          <label for="specialty">If you know the specialty of doctor you wish to see, enter it otherwise:</label>
+          <input type="text" id='specialty'>
+        </div>
+        <br>
+        <div class="from-group gender">
+          <label for="gender">If you would prefer a doctor of a specific gender specify here:</label>
+          <select id="gender">
+            <option value=""></option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <button type="submit" name="button">Search!</button>
+      </form>
+      <h4 id="top10">The top <span id='docs'></span> doctors to help you are:</h4>
+      <div class="results">
+<!-- Results fro API will be gathered and appended here -->
       </div>
-      <div class="form-group">
-        <label for="specialty">If you know the specialty of doctor you wish to see, enter it otherwise:</label>
-        <input type="text" id='specialty'>
+      <div class="error">
+        <p> Sorry! Unfortunately your search has not matched with any doctors. Perhaps try a different search term, or search by specialty (eg, pediatrician)</p>
       </div>
-      <div class="from-group">
-        <label for="gender">If you would prefer a doctor of a specific gender specify here, otherwise leave blank:</label>
-        <select id="gender">
-          <option value=""></option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-        </select>
+      <div class="banner">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Space_Needle_2011-07-04.jpg/1200px-Space_Needle_2011-07-04.jpg">
       </div>
-      <button type="submit" name="button">Search!</button>
-    </form>
-    The top <span id='docs'></span> doctors to help you are:
-    <div class="results">
-
     </div>
   </body>
 </html>

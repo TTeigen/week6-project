@@ -9,22 +9,22 @@ $(function() {
 
   $('.formOne').submit(function(event){
     event.preventDefault();
-    $('.results').text("");
-    $('#docs').text('');
     let symptom = $('#symptom').val();
     let specialty = $('#specialty').val();
     let gender = $('#gender').val();
     let search = new DoctorSearch;
-    console.log(symptom.length);
     if (!symptom && !specialty) {
       alert("Please enter either a symtpom or specialty");
       return;
     }
+    $('.error').hide();
+    $('.results').show();
+    $('.results').text("");
+    $('#docs').text('');
+    $('#top10').show();
     let results = search.searchBySymptom(symptom,gender,specialty);
     results.then (function(response){
       let body = JSON.parse(response);
-      console.log("body");
-      console.log(body);
       if (body.data.length > 0) {
         $('#docs').text(body.data.length);
         for (let i = 0; i < body.data.length; i++) {
@@ -40,11 +40,10 @@ $(function() {
           }
           $('.results').append(`<div class= 'doc${i}'>${name}<br>`);
           $('.results').append(`<img src="${pic}">`);
-          $('.results').append(`<div class = 'bio'>Phone: ${phone},<br>Address: ${address},<br>Accepting Patients: ${patients} </div></div><hr>`);
-
+          $('.results').append(`<div class = 'bio'>Phone: ${phone},<br>Address: ${address} <br>Accepting Patients: ${patients} </div></div><hr>`);
         }
       } else {
-        $('.results').append(`<p> Sorry! Unfortunately your search has not matched with any doctors. Perhaps try a different search term, or search by specialty (eg, pediatrician)</p>`)
+        $('.error').show();
       }
     });
   });
