@@ -1,22 +1,28 @@
-# Bagheera's Pizzeria
+# Better Doctor Search
 
-#### _A web site for ordering pizza - June 21, 2019_
+#### _A website for finding users to search doctors - July 5, 2019_
 
-#### _By **Na Hyung Choi**_
+#### _By **Trevor Teigen**_
 
 ## Description
 
-On this web site, the user can choose toppings, crust, and a size for one or more pizzas, see the details of the order and the final cost, and "place an order."
+On this website the user will be able to search for doctors based on various preferences and symptoms.
 
 ### Specs
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
-| **Creates a new pizza through a constructor** | var pizza1 = new Pizza ("large", ["cheese", "sausage"]) | pizza1 = { size : "large", toppings: ["cheese", "sausage"], cost: undefined} |
+| **Return a list of doctors in the Seattle area that treat the user's entered symptom/issue** | "Sore throat" | List of doctors suited to treat/identify issues related to sore throats  |
+| **Return a list of doctors in the Seattle area by name** | "Pool" | List of doctors with "Pool" as tehir first or last name and some information about them |
+| **Return an error if the user's search pulls up no responses (reason why if there is time to add that feature)** | "Sharp pain in pinky toe" | No doctors match your search (try a less specific description of your issue) |
+
 
 ## Setup/Installation Requirements
 
 * Clone this repository and open the .html file.
-* OR go directly to the [Web page](http://schoinh.github.io/pizza)
+* OR cd desktop/week6-project
+* npm run install
+* npm run start
+* explore the local host of the site
 
 ## Known Bugs
 * No known bugs at this time.
@@ -24,14 +30,15 @@ On this web site, the user can choose toppings, crust, and a size for one or mor
 ## Technologies Used
 * JavaScript
 * jQuery
-* Bootstrap
+* webpack
+* Better Doctor API
 
 ## Support and contact details
 
-_Please contact Na Hyung with questions and comments._
+_Please contact Trevor Teigen @ trevor.teigen123@gmail.com with questions and comments._
 
 ### License
 
 *GNU GPLv3*
 
-Copyright (c) 2019 **_Na Hyung Choi_**
+Copyright (c) 2019 **_Trevor Teigen_**
